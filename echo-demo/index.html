@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Donative</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+
+<link rel="shortcut icon" type="image/x-icon" href="img/dlogo.png"/>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+<link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic'/>
+<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+<link type="text/css" rel="stylesheet" href="css/main.css"/>
+<link type="text/css" rel="stylesheet" href="css/jBox.css"/>
+<link type="text/css" rel="stylesheet" href="css/scrolling-nav.css"/>
+</head>
+
+<!-- <body> -->
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top"><span class="lang-command">Avalanche v1.0</span></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="hidden">
+                        <a class="page-scroll" href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#scenario01"><span class="lang-command">Gen Z</span> </a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#scenario02"><span class="lang-command">Millennials</span> </a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#scenario03"><span class="lang-command">Gen X</span> </a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#scenario04"><span class="lang-command">Baby Boomers</span> </a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#scenario05"><span class="lang-command">Silent Generation</span> </a>
+                    </li>
+                </ul>
+                <i id="info-tab" class="fa fa-info-circle"></i>
+                <select id="soflow-l" onChange="languagesselectorListener()">
+                </select>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Intro Section -->
+    <section id="intro" class="intro-section">
+      <div class="container">
+        <div class="row">
+          <div id="demo-title">
+            <div class="col-sm-10 col-xs-12">
+                <h4><span class="lang-command">A Paradigm Shift In Audience Targeting</span></h4>
+            </div>
+          </div>
+        </div>
+
+        <div id="demo-box">
+          <div class="row">
+            <div class="col-sm-4 col-xs-12">
+                <div id="demo-controls">
+                  <div id="para-title">
+                    <button id="default-button"><span class="lang-command">Default</span></button><span class="lang-command">Behavioral Profile</span>
+                  </div>
+                  <div id="para-line"><i class="fa fa-question-circle-o" aria-hidden="true" title="$ToleranceDiscription"></i> <span class="lang-command">Tolerance</span>:&nbsp;&nbsp;
+                    <select id="soflow-t">
+                      <option value="0.2">$Low</option>
+                      <option value="0.4" selected="selected">$Medium</option>
+                      <option value="1.0">$High</option>
+                    </select>
+                  </div>
+                  <div id="para-line"><i class="fa fa-question-circle-o" aria-hidden="true" title="$InfluenceDiscription"></i> <span class="lang-command">Influence</span>:&nbsp;&nbsp;
+                    <select id="soflow-i">
+                      <option value="0">$Off</option>
+                      <option value="0.2">$Weak</option>
+                      <option value="0.8" selected="selected">$Strong</option>
+                    </select>
+                  </div>
+                  <div id="para-line"><i class="fa fa-question-circle-o" aria-hidden="true" title="$UnfriendingDiscription"></i> <span class="lang-command">Unfriending</span>:&nbsp;&nbsp;
+                    <select id="soflow-u">
+                      <option value="0">$Never</option>
+                      <option value="0.5">$Sometimes</option>
+                      <option value="0.9" selected="selected">$Often</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+            <div class="col-sm-4 col-xs-12">
+                <div id="demo-legend">
+                    <span class="lang-command">Lifetime Donor</span><span id="demo-right" class="lang-command">Lifetime Volunteer</span>
+                    <img src="img/RdPrBu.png" width="100%" height="20" alt="RdPrBu" style="max-width:100%;">
+                    <div id="para-line"></div>
+                    <div id="para-line">
+                      <span class="lang-command">Lower Impact</span><span class="symbol small"></span>
+                    </div>
+                    <div id="para-line">
+                      <span class="lang-command">Higher Impact</span><span class="symbol large"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4 col-xs-12">
+              <div id="demo-plot">
+                <div id="plot-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-question-circle-o" aria-hidden="true" title="$GraphDiscription"></i> <span class="lang-command">Values</span></div>
+                <div id="demo-epicurves"></div>
+                <div id="plot-xlable"><span class="lang-command">Time</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-8 col-xs-12">
+              <div id="demo-graph-layout">
+                <!-- <span id="start-text">Click Start button to start!</span> -->
+                <button id="start-button"><span class="lang-command">Start</span></button>
+                <button id="stop-button"><span class="lang-command">Stop</span></button>
+                <button id="reset-button"><span class="lang-command">Reset</span></button>
+                <span id="speed-box"><span class="lang-command">Speed</span>:</ br><input id="speed" type="range" min="0" max = "199" value="100" step="1" /></span>
+              </div>
+            </div>
+
+            <div class="col-sm-4 col-xs-12">
+              <div id="demo-chatting">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="scenario01" class="tutorial-section">
+        <div class="container">
+          <div id="tutorial-box">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3 class="lang-command">Profile: Gen Z</h3>
+                    <ul>
+                      <li><span class="lang-command">Tolerance</span>: <code class="lang-command">Medium</code></li>
+                      <li><span class="lang-command">Influence</span>: <code class="lang-command">Strong</code></li>
+                      <li><span class="lang-command">Unfriending</span>: <code class="lang-command">Often</code></li>
+                    </ul>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                  <p class="lead"><span class="lang-command">Scenario01Discription</span></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <hr>
+                    <img class="img-responsive" src="svg/scenario01.svg" alt="scenario01" width="600">
+                </div>
+            </div>
+            <br/>
+          </div>
+        </div>
+    </section>
+
+    <section id="scenario02" class="tutorial-section">
+        <div class="container">
+          <div id="tutorial-box">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3 class="lang-command"><span class="lang-command">Profile: Millennials</span></h3>
+                    <ul>
+                      <li><span class="lang-command">Tolerance</span>: <code class="lang-command">Low</code></li>
+                      <li><span class="lang-command">Influence</span>: <code class="lang-command">Strong</code></li>
+                      <li><span class="lang-command">Unfriending</span>: <code class="lang-command">Often</code></li>
+                    </ul>
+                    <hr>
+                </div>
+            </div>
+            <br/>
+            <div class="row">
+                <div class="col-xs-12">
+                  <p class="lead"><span class="lang-command">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nihil harum facilis nostrum in quos saepe amet expedita repudiandae dicta nulla ullam placeat inventore quasi fuga veritatis perferendis, est fugit.</span></p>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <hr>
+                    <img class="img-responsive" src="svg/scenario02.svg" alt="scenario02" width="600">
+                </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <section id="scenario03" class="tutorial-section">
+        <div class="container">
+          <div id="tutorial-box">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3 class="lang-command">Profile: Gen X</h3>
+                    <ul>
+                      <li><span class="lang-command">Tolerance</span>: <code class="lang-command">Medium</code></li>
+                      <li><span class="lang-command">Influence</span>: <code class="lang-command">Weak</code></li>
+                      <li><span class="lang-command">Unfriending</span>: <code class="lang-command">Sometimes</code></li>
+                    </ul>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                  <p class="lead"><span class="lang-command">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni quae modi sequi excepturi ea laboriosam in, a accusamus maiores error dignissimos tenetur voluptas obcaecati ipsum praesentium dolor esse! Optio, ea?</span></p>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <hr>
+                    <img class="img-responsive" src="svg/scenario03.svg" alt="scenario03" width="600">
+                </div>
+            </div>
+            <br/>
+          </div>
+        </div>
+    </section>
+
+    <section id="scenario04" class="tutorial-section">
+        <div class="container">
+          <div id="tutorial-box">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3 class="lang-command">Profile: Baby Boomers</h3>
+                    <ul>
+                      <li><span class="lang-command">Tolerance</span>: <code class="lang-command">Medium</code></li>
+                      <li><span class="lang-command">Influence</span>: <code class="lang-command">Strong</code></li>
+                      <li><span class="lang-command">Unfriending</span>: <code class="lang-command">Often</code></li>
+                    </ul>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+                  <p class="lead"><span class="lang-command">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam veniam eius fugiat voluptatum itaque adipisci repellendus eaque? Distinctio beatae a minus pariatur dignissimos, harum labore iusto amet explicabo expedita recusandae.</span></p>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <hr>
+                    <img class="img-responsive" src="svg/scenario04.svg" alt="scenario04" width="600">
+                </div>
+            </div>
+            <br/>
+          </div>
+        </div>
+    </section>
+
+    <section id="scenario05" class="tutorial-section">
+        <div class="container">
+          <div id="tutorial-box">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3 class="lang-command">Profile: Silent Generation</h3>
+                    <ul>
+                      <li><span class="lang-command">Tolerance</span>: <code class="lang-command">High</code></li>
+                      <li><span class="lang-command">Influence</span>: <code class="lang-command">Weak</code></li>
+                      <li><span class="lang-command">Unfriending</span>: <code class="lang-command">Never</code></li>
+                    </ul>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                  <p class="lead"><span class="lang-command">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit quam nostrum eligendi consequuntur, minus necessitatibus dolorem doloremque eius! Nam aliquid ullam saepe quia fuga deleniti, reiciendis explicabo necessitatibus delectus cupiditate?</span></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <hr>
+                    <img class="img-responsive" src="svg/scenario05.svg" alt="scenario05" width="500">
+                </div>
+            </div>
+            <br/>
+          </div>
+        </div>
+    </section>
+
+    <div id="footer">
+      <div class="container">
+        <!-- <div class="row">
+          <div class="col-md-2 col-sm-12">
+            <div id="copyright">
+              <p><img src="img/block-iu.png" height="16" width="13" alt="IUB" align="top">&nbsp; <a id="copy" href="https://www.iu.edu/copyright/index.html">Copyright &copy; 2019</a><br/></p>
+              <p><a id="copy" href="http://www.nagoya-u.ac.jp/"><img src="img/NU_logo.png" height="22" width="38" alt="Nagoya Univ" border="0"></a></p>
+              <p><a id="copy" href="http://www.jst.go.jp/kisoken/presto/en/index.html"><img src="img/presto_enS.jpg" height="26" width="74" alt="Presto" border="0"></a></p>
+            </div>
+          </div> -->
+          <div class="col-md-10 col-sm-12">
+            <div id="author">
+             Developed by <a href="https://github.com/andrewellis" target="_blank">Andrew Michaud</a>, inspired by <a href="https://upload.wikimedia.org/wikipedia/commons/d/d9/Steven_Seagal_November_2016.jpg" target="_blank">The Great One</a> and <a href="https://vignette.wikia.nocookie.net/itsalwayssunny/images/b/b8/4x13_%2813%29.jpg/revision/latest?cb=20110907071745" target="_blank">The Dayman</a>, advised by <a href="https://www.instagram.com/p/BxpUXPrHIrx/" target="_blank">Reece Mendes</a><Br>
+              <span class="lang-command">TranslatersName</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="info">
+      <div id="info-inner">
+        <i id="info-close" class="fa fa-times"></i>
+        <div id="info-inner-inner">
+          <h1 class="lang-command">Avalanche Protocol: FAQ</h1>
+          <h2 class="lang-command">What is Avalanche?</h2>
+          <p class="lang-command">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis esse ut praesentium aut, rem officia nesciunt deserunt quos dolor modi, dolores at. Obcaecati fugiat quisquam iste exercitationem eius? Placeat, quo.</p>
+          <h2 class="lang-command">What data do you analyze?</h2>
+          <p class="lang-command">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, quaerat vitae. Similique voluptate reprehenderit iste est nulla cupiditate corporis, mollitia, eum velit atque magnam ducimus fugit repudiandae quibusdam eius earum.</p>
+          <h2 class="lang-command">How does it work?</h2>
+          <p class="lang-command">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, rem ad. Molestiae molestias officiis voluptatibus odio quibusdam, atque reprehenderit mollitia dolorum voluptatem quos dicta aspernatur rem provident cum, quis cupiditate?</p>
+          <h2 class="lang-command">Will this get me laid?</h2>
+          <p class="lang-command">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste reiciendis deserunt, illum eum natus amet odit corrupti consequuntur, cum ea voluptatum optio eos non tempore voluptas sapiente, explicabo adipisci voluptates.</p>
+        </div>
+      </div>
+    </div>
+
+
+<script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="js/jquery.flot.min.js"></script>
+<script type="text/javascript" src="js/jquery.easing.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!-- put jBox.js below jquery.js -->
+<script type="text/javascript" src="js/jBox.min.js"></script>
+<script type="text/javascript" src="js/scrolling-nav.js"></script>
+<script type="text/javascript" src="js/d3.v4.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/d3-color.v1.min.js"></script>
+<script type="text/javascript" src="js/d3-scale-chromatic.v1.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/languageset.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/language.js" charset="utf-8"></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    new jBox('Tooltip', {
+      attach: 'i.fa.fa-question-circle-o',
+      theme: 'TooltipDark',
+      width: 350
+    });
+  });
+</script>
+
+</body>
+
+</html>
